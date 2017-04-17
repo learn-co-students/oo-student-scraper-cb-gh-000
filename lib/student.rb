@@ -8,8 +8,12 @@ class Student
   def initialize(student_hash)
     # Use metaprogramming to assign student attributes according to key/value pairs in hash argument
     # Use #send method
+    student_hash.each do |attribute, value|
+      self.send("#{attribute}=",value)
+    end
 
     # Add the new student to Student class variable holding array of all Students
+    self.class.all << self
   end
 
   def self.create_from_collection(students_array)
@@ -26,6 +30,7 @@ class Student
 
   def self.all
     # Return Student class variable holding array of all Students
+    @@all
   end
 end
 
