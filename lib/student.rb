@@ -19,8 +19,12 @@ class Student
   def self.create_from_collection(students_array)
     # Iterate over student hashes stored in argument holding array of students
     # Create a new individual student for each hash
+    students_array.each do |student_hash|
+      self.all << Student.new(student_hash)
+    end
 
     # Return all students
+    self.all
   end
 
   def add_student_attributes(attributes_hash)
