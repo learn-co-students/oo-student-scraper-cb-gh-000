@@ -9,7 +9,7 @@ class Student
     # Use metaprogramming to assign student attributes according to key/value pairs in hash argument
     # Use #send method
     student_hash.each do |attribute, value|
-      self.send("#{attribute}=",value)
+      self.send("#{attribute}=", value)
     end
 
     # Add the new student to Student class variable holding array of all Students
@@ -30,6 +30,11 @@ class Student
   def add_student_attributes(attributes_hash)
     # Use metaprogramming to assign student attributes according to key/value pairs in hash argument
     # Use #send method
+    attributes_hash.each do |attribute, value|
+      self.send("#{attribute}=", value)
+    end
+
+    self
   end
 
   def self.all
