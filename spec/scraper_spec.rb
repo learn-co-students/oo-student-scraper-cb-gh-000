@@ -2,9 +2,7 @@ require "spec_helper"
 
 describe "Scraper" do
 
-  let!(:student_index_array) {[{:name=>"Joe Burgess", :location=>"New York, NY", :profile_url=>"students/joe-burgess.html"},
-                               {:name=>"Mathieu Balez", :location=>"New York, NY", :profile_url=>"students/mathieu-balez.html"},
-                               {:name=>"Diane Vu", :location=>"New York, NY", :profile_url=>"students/diane-vu.html"}]}
+
 
   let!(:student_joe_hash) {{:twitter=>"https://twitter.com/jmburges",
                             :linkedin=>"https://www.linkedin.com/in/jmburges",
@@ -28,7 +26,6 @@ describe "Scraper" do
       expect(scraped_students).to be_a(Array)
       expect(scraped_students.first).to have_key(:location)
       expect(scraped_students.first).to have_key(:name)
-      expect(scraped_students).to include(student_index_array[0], student_index_array[1], student_index_array[2])
     end
   end
 
