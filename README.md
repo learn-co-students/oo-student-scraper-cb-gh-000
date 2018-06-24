@@ -1,4 +1,4 @@
-# Object Oriented Student Scraper
+# Object Oriented tStudent Scraper
 
 ## Objectives
 
