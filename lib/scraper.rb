@@ -46,5 +46,3 @@ class Scraper
   end
 
 end
-
-Scraper.scrape_profile_page("./fixtures/student-site/students/eric-chu.html")
