@@ -28,21 +28,21 @@ class Scraper
 
         case true
           when social.include?("facebook")
-            profile_url[:facebook] = social
+            profile_data[:facebook] = social
           when social.include?("twitter")
-            profile_url[:twitter] = social
+            profile_data[:twitter] = social
           when social.include?("github")
-            profile_url[:github] = social
+            profile_data[:github] = social
           when social.include?("linkedin")
-            profile_url[:linkedin] = social
+            profile_data[:linkedin] = social
           else
-            profile_url[:blog] = social
+            profile_data[:blog] = social
         end
-        puts profile_url
-
     end
+    profile_data[:profile_quote] = doc.css(".profile-quote").text
+    profile_data[:bio] = doc.css(".bio-content p").text
 
-    puts linkedin
+    profile_data
   end
 
 end
